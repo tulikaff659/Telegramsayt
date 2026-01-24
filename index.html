@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WinWin Signals | Bukmeker</title>
+    <title>BetWinner Signals | Bukmeker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #28a745;
-            --primary-dark: #1e7e34;
-            --secondary: #ffc107;
-            --accent: #fd7e14;
+            --primary: #00a854;
+            --primary-dark: #008542;
+            --secondary: #ff9800;
+            --accent: #ff5722;
             --success: #4caf50;
-            --danger: #dc3545;
-            --dark: #121212;
-            --darker: #0a0a0a;
+            --danger: #f44336;
+            --dark: #0a0a0a;
+            --darker: #050505;
             --light: #ffffff;
             --gray: #666666;
-            --card-bg: rgba(30, 30, 30, 0.7);
+            --card-bg: rgba(20, 20, 20, 0.9);
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Arial', 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background: var(--darker);
+            background: linear-gradient(135deg, var(--darker), #111111);
             color: var(--light);
             min-height: 100vh;
-            line-height: 1.5;
+            line-height: 1.6;
             padding-bottom: 70px;
             overflow-x: hidden;
         }
@@ -42,7 +42,7 @@
         .btn {
             padding: 12px 20px;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -50,18 +50,19 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
+            box-shadow: 0 2px 8px rgba(0, 168, 84, 0.3);
         }
 
         .btn-primary:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 168, 84, 0.4);
         }
 
         .btn-secondary {
@@ -92,23 +93,24 @@
 
         .btn-danger:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+            box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
         }
 
         .btn-vip {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            background: linear-gradient(135deg, #ff9800, #ff5722);
             color: #000;
+            font-weight: 700;
         }
 
         .btn-vip:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+            box-shadow: 0 4px 16px rgba(255, 152, 0, 0.4);
         }
 
         .btn-small {
             padding: 6px 12px;
             font-size: 11px;
-            border-radius: 8px;
+            border-radius: 6px;
         }
 
         .btn:disabled {
@@ -123,7 +125,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--darker);
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -133,29 +135,32 @@
         }
 
         .language-logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 168, 84, 0.4);
         }
 
         .language-logo i {
-            font-size: 36px;
+            font-size: 48px;
             color: white;
         }
 
         #languageTitle {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--primary);
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 168, 84, 0.3);
         }
 
         #languageSubtitle {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--gray);
             margin-bottom: 30px;
             text-align: center;
@@ -164,33 +169,34 @@
         .language-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 15px;
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
         }
 
         .lang-card {
             background: var(--card-bg);
-            border: 1px solid var(--glass-border);
+            border: 2px solid transparent;
             border-radius: 12px;
-            padding: 16px;
+            padding: 20px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .lang-card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 168, 84, 0.2);
         }
 
         .lang-card .flag {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .lang-card .name {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--light);
         }
@@ -205,8 +211,8 @@
         }
 
         .app-header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(20, 20, 20, 0.95));
+            backdrop-filter: blur(20px);
             padding: 16px 20px;
             display: flex;
             justify-content: space-between;
@@ -214,31 +220,36 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid rgba(0, 168, 84, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9l1ELgXeZwAVcOmvk-I964CtdeKSPMVcRxQ&s');
-            background-size: cover;
-            background-position: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 20px;
         }
 
         .logo-text {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--light);
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header-controls {
@@ -247,44 +258,23 @@
         }
 
         .header-btn {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            background: rgba(0, 168, 84, 0.1);
+            border: 1px solid rgba(0, 168, 84, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: var(--primary);
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .header-btn:hover {
             background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .notification-badge {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background: var(--danger);
             color: white;
-            font-size: 10px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .user-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-            flex-wrap: wrap;
+            transform: rotate(15deg);
         }
 
         .user-stats {
@@ -292,98 +282,100 @@
         }
 
         .user-card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
+            background: linear-gradient(135deg, rgba(0, 168, 84, 0.1), rgba(20, 20, 20, 0.9));
+            border: 1px solid rgba(0, 168, 84, 0.2);
             border-radius: 16px;
-            padding: 20px;
+            padding: 24px;
             position: relative;
+            box-shadow: 0 4px 20px rgba(0, 168, 84, 0.1);
         }
 
         .user-info {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .user-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .user-avatar i {
-            font-size: 20px;
+            font-size: 24px;
             color: white;
         }
 
         .user-details h3 {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             color: var(--light);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .user-id {
             display: inline-block;
-            padding: 4px 12px;
-            background: rgba(40, 167, 69, 0.2);
+            padding: 6px 15px;
+            background: rgba(0, 168, 84, 0.2);
             color: var(--primary);
-            border-radius: 12px;
-            font-size: 11px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 700;
-            font-family: 'Courier New', monospace;
             letter-spacing: 1px;
-            border: 1px solid rgba(40, 167, 69, 0.3);
-            margin-bottom: 8px;
+            border: 1px solid rgba(0, 168, 84, 0.3);
+            margin-bottom: 10px;
         }
 
         .user-level {
             display: inline-block;
-            padding: 4px 12px;
-            background: var(--accent);
-            color: var(--dark);
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 6px 15px;
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            color: white;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 700;
-            margin-left: 8px;
+            margin-left: 10px;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 15px;
         }
 
         .stat-item {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 12px;
-            padding: 16px;
+            padding: 20px;
             text-align: center;
+            border: 1px solid rgba(0, 168, 84, 0.1);
         }
 
         .stat-value {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--gray);
             font-weight: 600;
         }
 
         .register-promo {
             margin: 0 20px 20px;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            background: linear-gradient(135deg, rgba(0, 168, 84, 0.2), rgba(255, 152, 0, 0.2));
             border-radius: 16px;
-            padding: 20px;
+            padding: 24px;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(0, 168, 84, 0.3);
         }
 
         .register-content {
@@ -391,171 +383,187 @@
         }
 
         .register-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            background: rgba(0, 168, 84, 0.2);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .register-icon i {
-            font-size: 28px;
-            color: white;
+            font-size: 32px;
+            color: var(--primary);
         }
 
         .register-text h3 {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .register-text p {
-            font-size: 12px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .register-promo-code {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 10px;
-            margin: 12px 0;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(0, 168, 84, 0.3);
         }
 
         .promo-label {
-            font-size: 11px;
+            font-size: 12px;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .promo-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
             letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 168, 84, 0.3);
         }
 
         .quick-actions {
             padding: 0 20px 20px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .action-card {
             background: var(--card-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(0, 168, 84, 0.1);
             border-radius: 12px;
-            padding: 16px 8px;
+            padding: 20px 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .action-card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 168, 84, 0.2);
         }
 
         .action-icon {
-            width: 36px;
-            height: 36px;
-            margin: 0 auto 8px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 10px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .action-icon i {
-            font-size: 16px;
+            font-size: 20px;
             color: white;
         }
 
         .action-title {
-            font-size: 11px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 700;
             color: var(--light);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .action-desc {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--gray);
             line-height: 1.3;
         }
 
         .vip-banner {
             margin: 0 20px 20px;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 87, 34, 0.2));
             border-radius: 16px;
-            padding: 16px;
+            padding: 20px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid rgba(255, 152, 0, 0.3);
         }
 
         .vip-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .vip-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 152, 0, 0.2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .vip-icon i {
-            font-size: 20px;
-            color: white;
+            font-size: 24px;
+            color: #ff9800;
         }
 
         .vip-text h3 {
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 800;
             color: white;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .vip-text p {
-            font-size: 11px;
+            font-size: 12px;
             color: rgba(255, 255, 255, 0.9);
         }
 
         .vip-badge {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            padding: 4px 10px;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            color: #ff9800;
+            padding: 6px 12px;
             border-radius: 10px;
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
         }
 
         .section-header {
-            padding: 0 20px 16px;
+            padding: 0 20px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .section-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--light);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
         }
 
         .stats-container {
@@ -565,14 +573,14 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 15px;
         }
 
         .stat-card {
             background: var(--card-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(0, 168, 84, 0.1);
             border-radius: 12px;
-            padding: 16px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -580,40 +588,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .stat-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .stat-icon i {
-            font-size: 12px;
+            font-size: 14px;
             color: white;
         }
 
         .stat-card-title {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--light);
         }
 
         .stat-card-value {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 4px;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
         }
 
         .stat-card-label {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--gray);
             font-weight: 600;
         }
@@ -624,9 +632,9 @@
             left: 0;
             width: 100%;
             background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--glass-border);
-            padding: 8px 0;
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 168, 84, 0.2);
+            padding: 10px 0;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -641,8 +649,8 @@
             color: var(--gray);
             text-decoration: none;
             flex: 1;
-            padding: 6px 0;
-            transition: all 0.2s ease;
+            padding: 8px 0;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
@@ -651,12 +659,12 @@
         }
 
         .nav-icon {
-            font-size: 18px;
-            margin-bottom: 2px;
+            font-size: 20px;
+            margin-bottom: 3px;
         }
 
         .nav-text {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -668,7 +676,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             display: none;
             align-items: center;
             justify-content: center;
@@ -681,84 +689,94 @@
         }
 
         .modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.95));
+            border: 1px solid rgba(0, 168, 84, 0.3);
+            border-radius: 20px;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .modal-header {
-            padding: 16px;
-            border-bottom: 1px solid var(--glass-border);
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 168, 84, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px 20px 0 0;
         }
 
         .modal-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--light);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
         }
 
         .modal-close {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            background: rgba(0, 168, 84, 0.1);
+            border: 1px solid rgba(0, 168, 84, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: var(--primary);
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--primary);
+            color: white;
+            transform: rotate(90deg);
         }
 
         .modal-body {
-            padding: 20px;
+            padding: 24px;
         }
 
         .game-user-id {
-            background: rgba(40, 167, 69, 0.1);
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 16px;
+            background: rgba(0, 168, 84, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
             text-align: center;
-            border: 1px solid rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(0, 168, 84, 0.2);
         }
 
         .user-id-display {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: var(--primary);
             font-family: 'Courier New', monospace;
             letter-spacing: 1px;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
 
         .game-id-message {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--light);
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
         .game-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .game-title {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .game-subtitle {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--gray);
         }
 
@@ -772,26 +790,26 @@
         }
 
         .id-input-label {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--light);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .id-input-wrapper {
             position: relative;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .id-input {
             width: 100%;
-            padding: 16px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--glass-border);
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 168, 84, 0.2);
             border-radius: 12px;
             color: var(--light);
-            font-size: 16px;
+            font-size: 18px;
             font-family: 'Courier New', monospace;
             text-align: center;
             letter-spacing: 2px;
@@ -801,31 +819,31 @@
 
         .id-input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 168, 84, 0.2);
         }
 
         .id-input.valid {
             border-color: var(--success);
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
         }
 
         .id-input.invalid {
             border-color: var(--danger);
-            box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+            box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
         }
 
         .id-input-hint {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--gray);
             text-align: center;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .vip-timer-action {
-            background: rgba(253, 126, 20, 0.1);
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 20px;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            border-radius: 15px;
+            padding: 24px;
             margin: 20px 0;
             text-align: center;
             display: none;
@@ -836,10 +854,10 @@
         }
 
         .timer-active-message {
-            background: rgba(253, 126, 20, 0.1);
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 20px;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            border-radius: 15px;
+            padding: 24px;
             margin: 20px 0;
             text-align: center;
             display: none;
@@ -850,19 +868,20 @@
         }
 
         .timer-icon {
-            font-size: 40px;
-            color: var(--accent);
-            margin-bottom: 12px;
+            font-size: 48px;
+            color: #ff9800;
+            margin-bottom: 15px;
         }
 
         .timer-message {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--light);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .timer-submessage {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--gray);
         }
 
@@ -870,11 +889,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            margin: 20px 0;
+            gap: 12px;
+            margin: 24px 0;
             width: 100%;
             overflow-x: auto;
-            padding: 10px 0;
+            padding: 15px 0;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
@@ -884,102 +903,81 @@
         }
 
         .game-apple {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             cursor: pointer;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
             transition: all 0.3s ease;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .apple-mystery {
-            background-image: url('https://i.ibb.co/Gf3NcMDQ/maxresdefault.jpg');
+            background-image: url('https://images.unsplash.com/photo-1570913199992-91d07c140e7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');
             border-color: var(--primary);
         }
 
         .apple-whole {
-            background-image: url('https://i.pinimg.com/736x/6a/aa/19/6aaa196961f40afd21cf9d21824f137e.jpg');
+            background-image: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');
             border-color: var(--success);
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
         }
 
         .apple-bitten {
-            background-image: url('https://i.ibb.co/m5sNvNPK/62cd09ea-de08-49b9-9fea-d0100c747423-2.jpg');
+            background-image: url('https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');
             border-color: var(--danger);
-            box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
-        }
-
-        @media (max-width: 380px) {
-            .game-apple {
-                width: 50px;
-                height: 50px;
-                min-width: 50px;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .game-apple {
-                width: 45px;
-                height: 45px;
-                min-width: 45px;
-            }
-        }
-
-        @media (max-width: 280px) {
-            .game-apple {
-                width: 40px;
-                height: 40px;
-                min-width: 40px;
-            }
+            box-shadow: 0 0 15px rgba(244, 67, 54, 0.5);
         }
 
         .game-info {
-            background: rgba(40, 167, 69, 0.1);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 16px 0;
+            background: rgba(0, 168, 84, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
             text-align: center;
+            border: 1px solid rgba(0, 168, 84, 0.2);
         }
 
         .next-signal-timer {
-            background: rgba(253, 126, 20, 0.1);
-            border: 1px dashed var(--accent);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 16px 0;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px dashed rgba(255, 152, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
             text-align: center;
             display: none;
         }
 
         .timer-title {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 8px;
-            font-weight: 600;
+            font-size: 16px;
+            color: #ff9800;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .timer-display {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--light);
             font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
         }
 
         .timer-note {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--gray);
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .game-instruction {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--gray);
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
         .game-result-overlay {
@@ -988,14 +986,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
             display: none;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 10;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 20px;
             text-align: center;
         }
@@ -1005,22 +1003,22 @@
         }
 
         .result-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
+            font-size: 72px;
+            margin-bottom: 24px;
             animation: bounce 1s ease infinite;
         }
 
         .result-title {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--light);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .result-message {
-            font-size: 16px;
-            color: var(--accent);
-            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 24px;
         }
 
         .stage-transition {
@@ -1035,7 +1033,7 @@
             align-items: center;
             justify-content: center;
             z-index: 20;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
         }
 
@@ -1057,43 +1055,43 @@
         .hacking-line {
             position: absolute;
             width: 100%;
-            height: 2px;
-            background: #00ff00;
+            height: 3px;
+            background: var(--primary);
             animation: scanLine 2s linear infinite;
         }
 
         .hacking-text {
-            font-size: 32px;
-            font-weight: 700;
-            color: #00ff00;
-            text-shadow: 0 0 10px #00ff00;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            text-shadow: 0 0 15px var(--primary);
             font-family: 'Courier New', monospace;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             animation: glitch 0.5s linear infinite;
         }
 
         .hacking-subtitle {
-            font-size: 16px;
-            color: #00ff00;
+            font-size: 18px;
+            color: var(--primary);
             font-family: 'Courier New', monospace;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             opacity: 0.8;
         }
 
         .hacking-percentage {
-            font-size: 48px;
-            font-weight: 700;
-            color: #00ff00;
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary);
             font-family: 'Courier New', monospace;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px #00ff00;
+            margin-bottom: 36px;
+            text-shadow: 0 0 20px var(--primary);
         }
 
         .hacking-message {
-            font-size: 14px;
-            color: #00ff00;
+            font-size: 16px;
+            color: var(--primary);
             font-family: 'Courier New', monospace;
-            margin-top: 20px;
+            margin-top: 24px;
             text-align: center;
             padding: 0 20px;
             opacity: 0.7;
@@ -1101,8 +1099,8 @@
 
         .hacking-binary {
             position: absolute;
-            font-size: 12px;
-            color: #00ff00;
+            font-size: 14px;
+            color: var(--primary);
             opacity: 0.3;
             font-family: 'Courier New', monospace;
             pointer-events: none;
@@ -1110,110 +1108,111 @@
 
         .game-actions {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
 
         .game-actions .btn {
             flex: 1;
-            min-width: 120px;
-            padding: 14px;
+            min-width: 140px;
+            padding: 16px;
         }
 
         .vip-features {
-            margin: 20px 0;
+            margin: 24px 0;
         }
 
         .vip-feature-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            margin-bottom: 10px;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(0, 168, 84, 0.1);
         }
 
         .feature-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .feature-icon i {
-            font-size: 16px;
+            font-size: 20px;
             color: white;
         }
 
         .feature-text h4 {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--light);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .feature-text p {
-            font-size: 11px;
+            font-size: 13px;
             color: var(--gray);
         }
 
         .invite-section {
-            background: rgba(253, 126, 20, 0.1);
-            border: 1px dashed var(--accent);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 20px 0;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px dashed rgba(255, 152, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 24px 0;
             text-align: center;
         }
 
         .invite-title {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 8px;
-            font-weight: 600;
+            font-size: 16px;
+            color: #ff9800;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .invite-description {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--light);
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .invite-progress {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
         .invite-progress-item {
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 800;
         }
 
         .invite-progress-item.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--dark);
+            background: #ff9800;
+            border-color: #ff9800;
+            color: #000;
         }
 
         .invite-progress-item.completed {
-            background: var(--success);
-            border-color: var(--success);
+            background: var(--primary);
+            border-color: var(--primary);
             color: white;
         }
 
@@ -1226,28 +1225,35 @@
         }
 
         .page-header {
-            padding: 16px 20px;
+            padding: 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .page-back {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(0, 168, 84, 0.1);
+            border: 1px solid rgba(0, 168, 84, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: var(--primary);
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-back:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-3px);
         }
 
         .page-title {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: var(--light);
         }
 
@@ -1256,178 +1262,181 @@
         }
 
         .page-card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
+            background: linear-gradient(135deg, rgba(0, 168, 84, 0.1), rgba(20, 20, 20, 0.9));
+            border: 1px solid rgba(0, 168, 84, 0.2);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 168, 84, 0.1);
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .card-icon i {
-            font-size: 20px;
+            font-size: 24px;
             color: white;
         }
 
         .card-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--light);
         }
 
         .card-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--accent);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
             text-align: center;
-            margin: 16px 0;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(0, 168, 84, 0.3);
         }
 
         .card-desc {
-            font-size: 13px;
+            font-size: 15px;
             color: var(--gray);
-            line-height: 1.5;
-            margin-bottom: 20px;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
 
         .promo-code {
-            background: rgba(253, 126, 20, 0.1);
-            border: 1px dashed var(--accent);
-            border-radius: 12px;
-            padding: 16px;
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px dashed rgba(255, 152, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
-            margin: 20px 0;
+            margin: 24px 0;
         }
 
         .promo-code .code {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--accent);
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff9800;
             letter-spacing: 2px;
         }
 
         .promo-code .label {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--gray);
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .settings-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .settings-item {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 16px;
+            background: rgba(0, 168, 84, 0.1);
+            border: 1px solid rgba(0, 168, 84, 0.2);
+            border-radius: 15px;
+            padding: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .settings-item:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 168, 84, 0.2);
         }
 
         .settings-item-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .settings-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #ff9800);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .settings-icon i {
-            font-size: 16px;
+            font-size: 20px;
             color: white;
         }
 
         .settings-text h4 {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--light);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .settings-text p {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--gray);
         }
 
         .settings-arrow {
-            color: var(--gray);
-            font-size: 14px;
+            color: var(--primary);
+            font-size: 16px;
         }
 
         .guide-container {
-            margin-top: 20px;
+            margin-top: 24px;
         }
 
         .guide-step {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
         }
 
         .guide-step-number {
             display: inline-block;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             text-align: center;
-            line-height: 24px;
-            font-weight: 700;
-            margin-right: 10px;
+            line-height: 28px;
+            font-weight: 800;
+            margin-right: 12px;
         }
 
         .guide-step-title {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             color: var(--light);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .guide-step-desc {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--gray);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         @media (min-width: 768px) {
             .main-container, .page-container {
-                max-width: 480px;
+                max-width: 500px;
                 margin: 0 auto;
             }
             
@@ -1439,24 +1448,24 @@
         @media (max-width: 380px) {
             .quick-actions {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
+                gap: 10px;
             }
             
             .action-card {
-                padding: 12px 6px;
+                padding: 15px 8px;
             }
             
             .game-actions .btn {
-                min-width: 100px;
-                padding: 12px;
+                min-width: 120px;
+                padding: 14px;
             }
             
             .hacking-text {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             .hacking-percentage {
-                font-size: 36px;
+                font-size: 42px;
             }
             
             .user-actions {
@@ -1485,14 +1494,15 @@
             top: 80px;
             right: 20px;
             background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 12px 16px;
+            border: 1px solid rgba(0, 168, 84, 0.3);
+            border-radius: 15px;
+            padding: 15px 20px;
             color: var(--light);
-            font-size: 13px;
+            font-size: 14px;
             z-index: 10000;
             animation: toastSlideIn 0.3s ease;
-            max-width: 280px;
+            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes toastSlideIn {
@@ -1501,7 +1511,7 @@
         }
 
         .toast.success {
-            border-left: 4px solid var(--success);
+            border-left: 4px solid var(--primary);
         }
 
         .toast.error {
@@ -1513,7 +1523,7 @@
         }
 
         .toast.warning {
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid #ff9800;
         }
 
         @keyframes bounce {
@@ -1521,7 +1531,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-15px);
             }
         }
 
@@ -1556,27 +1566,27 @@
         @keyframes glitch {
             0% {
                 transform: translate(0);
-                text-shadow: 0 0 10px #00ff00;
+                text-shadow: 0 0 10px var(--primary);
             }
             20% {
                 transform: translate(-2px, 2px);
-                text-shadow: 2px -2px 10px #00ff00, -2px 2px 10px #00ff00;
+                text-shadow: 2px -2px 10px var(--primary), -2px 2px 10px var(--primary);
             }
             40% {
                 transform: translate(-2px, -2px);
-                text-shadow: -2px 2px 10px #00ff00, 2px -2px 10px #00ff00;
+                text-shadow: -2px 2px 10px var(--primary), 2px -2px 10px var(--primary);
             }
             60% {
                 transform: translate(2px, 2px);
-                text-shadow: 2px 2px 10px #00ff00, -2px -2px 10px #00ff00;
+                text-shadow: 2px 2px 10px var(--primary), -2px -2px 10px var(--primary);
             }
             80% {
                 transform: translate(2px, -2px);
-                text-shadow: -2px -2px 10px #00ff00, 2px 2px 10px #00ff00;
+                text-shadow: -2px -2px 10px var(--primary), 2px 2px 10px var(--primary);
             }
             100% {
                 transform: translate(0);
-                text-shadow: 0 0 10px #00ff00;
+                text-shadow: 0 0 10px var(--primary);
             }
         }
 
@@ -1608,7 +1618,7 @@
         <div class="language-logo">
             <i class="fas fa-trophy"></i>
         </div>
-        <h2 id="languageTitle">WinWin Signals</h2>
+        <h2 id="languageTitle">BetWinner Signals</h2>
         <p id="languageSubtitle">Bukmeker platformasi</p>
         
         <div class="language-grid">
@@ -1637,9 +1647,9 @@
         <header class="app-header">
             <div class="logo">
                 <div class="logo-icon">
-                    <!-- WinWin logo image applied via CSS -->
+                    BW
                 </div>
-                <div class="logo-text">WinWin Signals</div>
+                <div class="logo-text">BetWinner Signals</div>
             </div>
             
             <div class="header-controls">
@@ -1692,12 +1702,12 @@
                 </div>
                 <div class="register-text">
                     <h3 id="registerPromoTitle">SIGNAL OLISH UCHUN RO'YXATDAN O'TING</h3>
-                    <p id="registerPromoDesc">ALFUT promokod orqali WinWin-da ro'yxatdan o'ting va yuqori aniqlikdagi signallarga ega bo'ling</p>
+                    <p id="registerPromoDesc">SIGNAL7 promokod orqali BetWinner-da ro'yxatdan o'ting va yuqori aniqlikdagi signallarga ega bo'ling</p>
                 </div>
                 
                 <div class="register-promo-code">
                     <div class="promo-label">PROMOKOD</div>
-                    <div class="promo-value">ALFUT</div>
+                    <div class="promo-value">SIGNAL7</div>
                 </div>
                 
                 <button class="btn btn-primary" id="mainRegisterBtn" style="width: 100%; padding: 16px; font-size: 16px;">
@@ -1828,7 +1838,7 @@
                 </div>
                 
                 <p class="card-desc" id="apkDescText">
-                    WinWin mobil ilovasini yuklab oling va istalgan joydan signallar oling.
+                    BetWinner mobil ilovasini yuklab oling va istalgan joydan signallar oling.
                     To'liq funksionallik va qulay interfeys. App iOS va Android uchun mavjud[citation:1].
                 </p>
                 
@@ -1837,7 +1847,7 @@
                 </button>
                 
                 <div class="promo-code">
-                    <div class="code">ALFUT</div>
+                    <div class="code">SIGNAL7</div>
                     <div class="label">Promokod bilan ro'yxatdan o'ting</div>
                 </div>
             </div>
@@ -1896,7 +1906,7 @@
                     <div class="card-icon">
                         <i class="fas fa-gift"></i>
                     </div>
-                    <div class="card-title">ALFUT BONUSI</div>
+                    <div class="card-title">SIGNAL7 PROMOKODI</div>
                 </div>
                 
                 <div class="card-value">
@@ -1904,7 +1914,7 @@
                 </div>
                 
                 <p class="card-desc" id="bonusDescText">
-                    ALFUT promokodi bilan WinWin-da ro'yxatdan o'ting va standart bonusdan 30% ko'proq bonus oling[citation:1].
+                    SIGNAL7 promokodi bilan BetWinner-da ro'yxatdan o'ting va standart bonusdan 30% ko'proq bonus oling[citation:1].
                     Casino va sport tikish uchun 100% bonus gacha[citation:1].
                 </p>
                 
@@ -1913,7 +1923,7 @@
                 </button>
                 
                 <div class="promo-code">
-                    <div class="code">ALFUT</div>
+                    <div class="code">SIGNAL7</div>
                     <div class="label">Promokod bilan ro'yxatdan o'ting</div>
                 </div>
             </div>
@@ -2055,10 +2065,10 @@
                 <div class="guide-step">
                     <div class="guide-step-title">
                         <span class="guide-step-number">1</span>
-                        <span id="guideStep1Title">WinWin-da ro'yxatdan o'tish</span>
+                        <span id="guideStep1Title">BetWinner-da ro'yxatdan o'tish</span>
                     </div>
                     <p class="guide-step-desc" id="guideStep1Desc">
-                        ALFUT promokodi bilan WinWin-da ro'yxatdan o'ting. Bu sizga signal olish imkoniyatini beradi.
+                        SIGNAL7 promokodi bilan BetWinner-da ro'yxatdan o'ting. Bu sizga signal olish imkoniyatini beradi.
                     </p>
                 </div>
                 
@@ -2068,7 +2078,7 @@
                         <span id="guideStep2Title">ID raqamni kiritish</span>
                     </div>
                     <p class="guide-step-desc" id="guideStep2Desc">
-                        WinWin akkauntingizning ID raqamini kiritib, signal olish o'yiniga kirish.
+                        BetWinner akkauntingizning ID raqamini kiritib, signal olish o'yiniga kirish.
                     </p>
                 </div>
                 
@@ -2078,7 +2088,7 @@
                         <span id="guideStep3Title">Signal o'yini</span>
                     </div>
                     <p class="guide-step-desc" id="guideStep3Desc">
-                        Butun olmalarni tanlang. Har bir yutuqli bosqich sizga WinWin uchun signal beradi.
+                        Butun olmalarni tanlang. Har bir yutuqli bosqich sizga BetWinner uchun signal beradi.
                     </p>
                 </div>
                 
@@ -2095,7 +2105,7 @@
                 <div class="guide-step">
                     <div class="guide-step-title">
                         <span class="guide-step-number">5</span>
-                        <span id="guideStep5Title">WinWin signal olish</span>
+                        <span id="guideStep5Title">BetWinner signal olish</span>
                     </div>
                     <p class="guide-step-desc" id="guideStep5Desc">
                         O'yin yutqazilsa, 2 soat kutish kerak. VIP signal bilan kutish vaqtini o'tkazib yuborish mumkin.
@@ -2146,7 +2156,7 @@
     <div class="modal-overlay" id="gameModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="gameModalTitle">WinWin SIGNAL OLISH</h3>
+                <h3 class="modal-title" id="gameModalTitle">BetWinner SIGNAL OLISH</h3>
                 <div class="modal-close" id="closeGameModal">
                     <i class="fas fa-times"></i>
                 </div>
@@ -2156,8 +2166,8 @@
                 <div class="game-user-id">
                     <div class="user-id-display" id="modalUserIdDisplay">ID: 12345678901</div>
                     <div class="game-id-message" id="gameIdMessage">
-                        WinWin signal olish uchun ALFUT promokod orqali ro'yxatdan o'ting. 
-                        WinWin akkaunt ID raqamingizni kiriting va butun olmalarni tanlang.
+                        BetWinner signal olish uchun SIGNAL7 promokod orqali ro'yxatdan o'ting. 
+                        BetWinner akkaunt ID raqamingizni kiriting va butun olmalarni tanlang.
                     </div>
                 </div>
                 
@@ -2165,10 +2175,10 @@
                     <div class="hacking-container">
                         <div class="hacking-line"></div>
                         <div class="hacking-text">HACKING</div>
-                        <div class="hacking-subtitle">WinWin signal yuklanmoqda...</div>
+                        <div class="hacking-subtitle">BetWinner signal yuklanmoqda...</div>
                         <div class="hacking-percentage" id="hackingPercentage">0%</div>
                         <div class="hacking-message">
-                            WinWin tizimiga kirish...<br>
+                            BetWinner tizimiga kirish...<br>
                             Ma'lumotlar tahlili jarayoni...
                         </div>
                     </div>
@@ -2192,7 +2202,7 @@
                 </div>
                 
                 <div class="id-input-section" id="idInputSection">
-                    <div class="id-input-label" id="idInputLabel">WinWin ID RAQAMINGIZNI KIRITING</div>
+                    <div class="id-input-label" id="idInputLabel">BetWinner ID RAQAMINGIZNI KIRITING</div>
                     <div class="id-input-wrapper">
                         <input type="text" 
                                class="id-input" 
@@ -2209,14 +2219,14 @@
                             <i class="fas fa-check-circle"></i> <span id="verifyIdText">TASDIQLASH</span>
                         </button>
                         <button class="btn btn-secondary" id="registerInModalBtn">
-                            <i class="fas fa-user-plus"></i> <span id="registerInModalText">WinWin RO'YXATDAN O'TISH</span>
+                            <i class="fas fa-user-plus"></i> <span id="registerInModalText">BetWinner RO'YXATDAN O'TISH</span>
                         </button>
                     </div>
                 </div>
                 
                 <div class="game-section" id="gameSection" style="display: none;">
                     <div class="game-header">
-                        <h2 class="game-title">WinWin signal</h2>
+                        <h2 class="game-title">BetWinner signal</h2>
                         <p class="game-subtitle" id="gameSubtitle">Butun olmalarni tanlang</p>
                     </div>
                     
@@ -2240,7 +2250,7 @@
                     </div>
                     
                     <div class="next-signal-timer" id="nextSignalTimer">
-                        <div class="timer-title">KEYINGI WinWin SIGNAL</div>
+                        <div class="timer-title">KEYINGI BetWinner SIGNAL</div>
                         <div class="timer-display" id="timerDisplay">02:00:00</div>
                         <div class="timer-note">VIP signal olish uchun yuqoridagi tugmani bosing</div>
                     </div>
@@ -2273,7 +2283,7 @@
     <div class="modal-overlay" id="vipModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="vipModalTitle">WinWin VIP SIGNAL</h3>
+                <h3 class="modal-title" id="vipModalTitle">BetWinner VIP SIGNAL</h3>
                 <div class="modal-close" id="closeVipModal">
                     <i class="fas fa-times"></i>
                 </div>
@@ -2284,14 +2294,14 @@
                     <div style="font-size: 48px; color: #ff9800; margin-bottom: 12px;">
                         <i class="fas fa-gem"></i>
                     </div>
-                    <h3 style="font-size: 18px; color: var(--light); margin-bottom: 8px;" id="vipMainTitle">WinWin VIP A'ZO BO'LING</h3>
+                    <h3 style="font-size: 18px; color: var(--light); margin-bottom: 8px;" id="vipMainTitle">BetWinner VIP A'ZO BO'LING</h3>
                     <p style="color: var(--gray); font-size: 13px;" id="vipMainDesc">30% ko'proq bonus[citation:1] va ekskluziv imtiyozlar</p>
                 </div>
                 
                 <div class="invite-section">
-                    <div class="invite-title" id="inviteForVipTitle">WinWin VIP SIGNAL OLISH UCHUN</div>
+                    <div class="invite-title" id="inviteForVipTitle">BetWinner VIP SIGNAL OLISH UCHUN</div>
                     <div class="invite-description" id="inviteForVipDesc">
-                        WinWin VIP signal olish uchun 5 ta do'stingizni taklif qiling.
+                        BetWinner VIP signal olish uchun 5 ta do'stingizni taklif qiling.
                         Har bir taklif qilingan do'st bilan darajangiz oshadi.
                         5 ta do'st taklif qilsangiz, VIP signal olishingiz mumkin.
                     </div>
@@ -2320,7 +2330,7 @@
                         </div>
                         <div class="feature-text">
                             <h4 id="vipFeature1Title">30% Ko'proq Bonus[citation:1]</h4>
-                            <p id="vipFeature1Desc">Standart WinWin bonusi dan 30% ko'proq bonus[citation:1]</p>
+                            <p id="vipFeature1Desc">Standart BetWinner bonusi dan 30% ko'proq bonus[citation:1]</p>
                         </div>
                     </div>
                     
@@ -2346,7 +2356,7 @@
                 </div>
                 
                 <button class="btn btn-primary" id="getVipBtn" style="width: 100%; margin-top: 20px;" disabled>
-                    <i class="fas fa-crown"></i> <span id="getVipText">WinWin VIP SIGNAL OLISH</span>
+                    <i class="fas fa-crown"></i> <span id="getVipText">BetWinner VIP SIGNAL OLISH</span>
                 </button>
             </div>
         </div>
@@ -2356,14 +2366,14 @@
     <div class="modal-overlay" id="changeIdModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="changeIdModalTitle">WinWin ID O'ZGARTIRISH</h3>
+                <h3 class="modal-title" id="changeIdModalTitle">BetWinner ID O'ZGARTIRISH</h3>
                 <div class="modal-close" id="closeChangeIdModal">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
             
             <div class="modal-body">
-                <div class="id-input-label">YANGI WinWin ID RAQAMNI KIRITING</div>
+                <div class="id-input-label">YANGI BetWinner ID RAQAMNI KIRITING</div>
                 <div class="id-input-wrapper">
                     <input type="text" 
                            class="id-input" 
@@ -2373,7 +2383,7 @@
                            inputmode="numeric">
                 </div>
                 <div class="id-input-hint">
-                    WinWin akkauntingizning yangi ID raqamini kiriting. ALFUT promokod bilan ro'yxatdan o'ting.
+                    BetWinner akkauntingizning yangi ID raqamini kiriting. SIGNAL7 promokod bilan ro'yxatdan o'ting.
                 </div>
                 
                 <div class="game-actions">
@@ -2391,7 +2401,7 @@
     <script>
         const translations = {
             uz: {
-                languageTitle: "WinWin Signals",
+                languageTitle: "BetWinner Signals",
                 languageSubtitle: "Bukmeker platformasi",
                 userName: "Foydalanuvchi",
                 userLevel: "YANGI",
@@ -2410,42 +2420,42 @@
                 vipBannerTitle: "VIP A'ZO BO'LING",
                 vipBannerDesc: "30% ko'proq bonus[citation:1]",
                 registerPromoTitle: "SIGNAL OLISH UCHUN RO'YXATDAN O'TING",
-                registerPromoDesc: "ALFUT promokod orqali WinWin-da ro'yxatdan o'ting va yuqori aniqlikdagi signallarga ega bo'ling",
+                registerPromoDesc: "SIGNAL7 promokod orqali BetWinner-da ro'yxatdan o'ting va yuqori aniqlikdagi signallarga ega bo'ling",
                 mainRegisterText: "RO'YXATDAN O'TISH",
                 statsTitle: "KUNLIK STATISTIKA",
                 dailyActive: "KUNLIK FAOL",
                 dailyAvgIncome: "O'RTACHA DAROMAD",
                 profit: "FOYDA",
                 onlinePlayers: "ONLAYN O'YINCHILAR",
-                gameModalTitle: "WinWin SIGNAL OLISH",
+                gameModalTitle: "BetWinner SIGNAL OLISH",
                 gameSubtitle: "www.signal7.digital",
-                gameInstruction: "Olmalarni ko'rish tugmasini bosing vabutun olmalar qayerda ekanini bilib oling kegingi signal tugmasi orqali kegingi qatorni koring.",
-                gameIdMessage: "WinWin signal olish uchun ALFUT promokod orqali ro'yxatdan o'ting. WinWin akkaunt ID raqami orqali oyinga kiring va signallarni oling.",
+                gameInstruction: "Olmalarni ko'rish tugmasini bosing va butun olmalar qayerda ekanini bilib oling keyingi signal tugmasi orqali keyingi qatorni koring.",
+                gameIdMessage: "BetWinner signal olish uchun SIGNAL7 promokod orqali ro'yxatdan o'ting. BetWinner akkaunt ID raqami orqali oyinga kiring va signallarni oling.",
                 revealText: "OLMALARNI KO'RISH",
                 nextStageText: "KEYINGI SIGNAL",
-                vipModalTitle: "WinWin VIP SIGNAL",
-                vipMainTitle: "WinWin VIP A'ZO BO'LING",
+                vipModalTitle: "BetWinner VIP SIGNAL",
+                vipMainTitle: "BetWinner VIP A'ZO BO'LING",
                 vipMainDesc: "30% ko'proq bonus[citation:1] va ekskluziv imtiyozlar",
                 vipFeature1Title: "30% Ko'proq Bonus[citation:1]",
-                vipFeature1Desc: "Standart WinWin bonusi dan 30% ko'proq bonus[citation:1]",
+                vipFeature1Desc: "Standart BetWinner bonusi dan 30% ko'proq bonus[citation:1]",
                 vipFeature2Title: "Real-vaqtda",
                 vipFeature2Desc: "Darhol bildirishnomalar va yangilanishlar",
                 vipFeature3Title: "Yuqori aniqlikdagi tahmin",
                 vipFeature3Desc: "Chuqur tahlillar va oldindan ko'rish imkoniyati",
-                getVipText: "WinWin VIP SIGNAL OLISH",
+                getVipText: "BetWinner VIP SIGNAL OLISH",
                 getVipSignalText: "VIP SIGNAL OLISH",
                 getVipSignalEarlyText: "VIP SIGNAL OLISH",
-                inviteForVipTitle: "WinWin VIP SIGNAL OLISH UCHUN",
-                inviteForVipDesc: "WinWin VIP signal olish uchun 5 ta do'stingizni taklif qiling. Har bir taklif qilingan do'st bilan darajangiz oshadi. 5 ta do'st taklif qilsangiz, VIP signal olishingiz mumkin.",
+                inviteForVipTitle: "BetWinner VIP SIGNAL OLISH UCHUN",
+                inviteForVipDesc: "BetWinner VIP signal olish uchun 5 ta do'stingizni taklif qiling. Har bir taklif qilingan do'st bilan darajangiz oshadi. 5 ta do'st taklif qilsangiz, VIP signal olishingiz mumkin.",
                 inviteForVipBtnText: "DO'STLARNI TAKLIF QILISH",
                 inviteFriendsValue: "DARAJANI OSHIRISH",
                 inviteFriendsDescText: "Har bir taklif qilingan do'st bilan darajangiz oshadi. 5 ta do'st taklif qilsangiz, VIP signalga ega bo'lasiz!",
-                apkDescText: "WinWin mobil ilovasini yuklab oling va istalgan joydan signallar oling. To'liq funksionallik va qulay interfeys. App iOS va Android uchun mavjud[citation:1].",
+                apkDescText: "BetWinner mobil ilovasini yuklab oling va istalgan joydan signallar oling. To'liq funksionallik va qulay interfeys. App iOS va Android uchun mavjud[citation:1].",
                 downloadApkText: "YUKLASH",
-                bonusDescText: "ALFUT promokodi bilan WinWin-da ro'yxatdan o'ting va standart bonusdan 30% ko'proq bonus oling[citation:1]. Casino va sport tikish uchun 100% bonus gacha[citation:1].",
+                bonusDescText: "SIGNAL7 promokodi bilan BetWinner-da ro'yxatdan o'ting va standart bonusdan 30% ko'proq bonus oling[citation:1]. Casino va sport tikish uchun 100% bonus gacha[citation:1].",
                 getBonusText: "BONUS OLISH",
                 inviteFriendsText: "DO'STLARNI TAKLIF QILISH",
-                successSignal: "✅ WinWin signal olindi!",
+                successSignal: "✅ BetWinner signal olindi!",
                 errorSignal: "❌ O'yin tugadi.",
                 successBonus: "✅ Bonus olindi!",
                 successInvite: "✅ Do'st taklif qilindi! Darajangiz oshdi!",
@@ -2456,35 +2466,35 @@
                 loseMessage: "Keyinroq urinib ko'ring",
                 restartGameText: "QAYTA BOSHLASH",
                 closeGameText: "YOPISH",
-                chooseApple: "🫱 Kegingi signal tugmasini bosing",
+                chooseApple: "🫱 Keyingi signal tugmasini bosing",
                 applesRevealed: "👁️ Olmalar ko'rsatildi",
                 nextStageReady: "👉 Keyingi signalga o'tish mumkin",
-                timerTitle: "KEYINGI WinWin SIGNAL",
+                timerTitle: "KEYINGI BetWinner SIGNAL",
                 timerNote: "VIP signal olish uchun yuqoridagi tugmani bosing",
-                idInputLabel: "WinWin ID RAQAMINGIZNI KIRITING",
+                idInputLabel: "BetWinner ID RAQAMINGIZNI KIRITING",
                 idInputHint: "ID raqam tasdiqlang",
                 verifyIdText: "TASDIQLASH",
-                registerInModalText: "WinWin RO'YXATDAN O'TISH",
-                idRequired: "⚠️ Iltimos, WinWin ID raqamingizni kiriting",
+                registerInModalText: "BetWinner RO'YXATDAN O'TISH",
+                idRequired: "⚠️ Iltimos, BetWinner ID raqamingizni kiriting",
                 idInvalid: "❌ Noto'g'ri ID raqam.",
-                idVerified: "✅ WinWin ID raqam tasdiqlandi! Signal olish mumkin",
+                idVerified: "✅ BetWinner ID raqam tasdiqlandi! Signal olish mumkin",
                 idExample: "Misol: 12345678901",
                 timerActiveMessage: "Keyingi signalni kutmoqdasiz",
                 timerSubmessage: "Taymer tugagandan so'ng signal olish mumkin",
                 changeIdText: "ID o'zgartirish",
                 registerText: "Ro'yxatdan o'tish",
-                changeIdModalTitle: "WinWin ID O'ZGARTIRISH",
+                changeIdModalTitle: "BetWinner ID O'ZGARTIRISH",
                 saveNewIdText: "SAQLASH",
                 cancelChangeIdText: "BEKOR QILISH",
-                idChangeSuccess: "✅ WinWin ID raqam muvaffaqiyatli o'zgartirildi! Signal olish mumkin.",
-                registerSuccess: "✅ WinWin-da muvaffaqiyatli ro'yxatdan o'tdingiz!",
+                idChangeSuccess: "✅ BetWinner ID raqam muvaffaqiyatli o'zgartirildi! Signal olish mumkin.",
+                registerSuccess: "✅ BetWinner-da muvaffaqiyatli ro'yxatdan o'tdingiz!",
                 vipTimerActionMessage: "Vaqtdan oldin signal olish",
                 vipTimerActionSubmessage: "VIP signal bilan kutish vaqtini o'tkazib yuboring",
                 getVipSignalEarlyText: "VIP SIGNAL OLISH",
                 inviteForVipSuccess: "✅ Taklif xabari yuborildi! Do'stlaringizni taklif qiling.",
                 vipSignalUnavailable: "❌ VIP signal olish uchun 5 ta do'st taklif qilishingiz kerak",
                 vipSignalAvailable: "✅ VIP signal olish mumkin!",
-                registerLinkOpened: "✅ WinWin ro'yxatdan o'tish sahifasi ochildi",
+                registerLinkOpened: "✅ BetWinner ro'yxatdan o'tish sahifasi ochildi",
                 timerReset: "✅ Taymer to'xtatildi! Yangi ID bilan signal olishingiz mumkin.",
                 levelUp: "✅ Darajangiz oshdi! Yangi daraja: ",
                 settingsLanguageTitle: "Tilni o'zgartirish",
@@ -2495,19 +2505,19 @@
                 settingsInviteDesc: "Darajangizni oshiring",
                 settingsGuideTitle: "Ishletish qo'llanmasi",
                 settingsGuideDesc: "Qanday ishlatish haqida",
-                guideStep1Title: "WinWin-da ro'yxatdan o'tish",
-                guideStep1Desc: "ALFUT promokodi bilan WinWin-da ro'yxatdan o'ting. Bu sizga signal olish imkoniyatini beradi.",
+                guideStep1Title: "BetWinner-da ro'yxatdan o'tish",
+                guideStep1Desc: "SIGNAL7 promokodi bilan BetWinner-da ro'yxatdan o'ting. Bu sizga signal olish imkoniyatini beradi.",
                 guideStep2Title: "ID raqamni kiritish",
-                guideStep2Desc: "WinWin akkauntingizning ID raqamini kiritib, signal olish o'yiniga kirish.",
+                guideStep2Desc: "BetWinner akkauntingizning ID raqamini kiritib, signal olish o'yiniga kirish.",
                 guideStep3Title: "Signal o'yini",
-                guideStep3Desc: "Butun olmalarni tanlang. Har bir yutuqli bosqich sizga WinWin uchun signal beradi.",
+                guideStep3Desc: "Butun olmalarni tanlang. Har bir yutuqli bosqich sizga BetWinner uchun signal beradi.",
                 guideStep4Title: "Do'stlarni taklif qilish",
                 guideStep4Desc: "5 ta do'st taklif qiling va VIP signalga ega bo'ling.",
-                guideStep5Title: "WinWin signal olish",
+                guideStep5Title: "BetWinner signal olish",
                 guideStep5Desc: "O'yin yutqazilsa, 2 soat kutish kerak. VIP signal bilan kutish vaqtini o'tkazib yuborish mumkin."
             },
             ru: {
-                languageTitle: "WinWin Signals",
+                languageTitle: "BetWinner Signals",
                 languageSubtitle: "Букмекерская платформа",
                 userName: "Пользователь",
                 userLevel: "НОВЫЙ",
@@ -2526,42 +2536,42 @@
                 vipBannerTitle: "СТАНЬТЕ VIP",
                 vipBannerDesc: "30% больше бонуса[citation:1]",
                 registerPromoTitle: "ЗАРЕГИСТРИРУЙТЕСЬ ДЛЯ ПОЛУЧЕНИЯ СИГНАЛОВ",
-                registerPromoDesc: "Зарегистрируйтесь в WinWin через промокод ALFUT и получите доступ к высокоточным сигналам",
+                registerPromoDesc: "Зарегистрируйтесь в BetWinner через промокод SIGNAL7 и получите доступ к высокоточным сигналам",
                 mainRegisterText: "РЕГИСТРАЦИЯ",
                 statsTitle: "ЕЖЕДНЕВНАЯ СТАТИСТИКА",
                 dailyActive: "АКТИВНЫХ",
                 dailyAvgIncome: "СРЕДНИЙ ДОХОД",
                 profit: "ПРИБЫЛЬ",
                 onlinePlayers: "ОНЛАЙН ИГРОКОВ",
-                gameModalTitle: "ПОЛУЧИТЬ СИГНАЛ WinWin",
+                gameModalTitle: "ПОЛУЧИТЬ СИГНАЛ BetWinner",
                 gameSubtitle: "Выбирайте целые яблоки",
                 gameInstruction: "Нажмите кнопку показать яблоки и выберите целые яблоки. На каждом этапе 5 яблок.",
-                gameIdMessage: "Зарегистрируйтесь через промокод ALFUT в WinWin для получения сигналов. Введите ваш зарегистрированный ID номер WinWin и выбирайте целые яблоки.",
+                gameIdMessage: "Зарегистрируйтесь через промокод SIGNAL7 в BetWinner для получения сигналов. Введите ваш зарегистрированный ID номер BetWinner и выбирайте целые яблоки.",
                 revealText: "ПОКАЗАТЬ ЯБЛОКИ",
                 nextStageText: "СЛЕДУЮЩИЙ ЭТАП",
-                vipModalTitle: "VIP СИГНАЛ WinWin",
-                vipMainTitle: "СТАНЬТЕ VIP В WinWin",
+                vipModalTitle: "VIP СИГНАЛ BetWinner",
+                vipMainTitle: "СТАНЬТЕ VIP В BetWinner",
                 vipMainDesc: "30% больше бонуса[citation:1] и эксклюзивные привилегии",
                 vipFeature1Title: "30% Больше бонуса[citation:1]",
-                vipFeature1Desc: "На 30% больше бонуса чем стандартное предложение WinWin[citation:1]",
+                vipFeature1Desc: "На 30% больше бонуса чем стандартное предложение BetWinner[citation:1]",
                 vipFeature2Title: "Реальное время",
                 vipFeature2Desc: "Мгновенные уведомления и обновления",
                 vipFeature3Title: "Высокоточные прогнозы",
                 vipFeature3Desc: "Глубокий анализ и возможность предварительного просмотра",
-                getVipText: "ПОЛУЧИТЬ VIP СИГНАЛ WinWin",
+                getVipText: "ПОЛУЧИТЬ VIP СИГНАЛ BetWinner",
                 getVipSignalText: "ПОЛУЧИТЬ VIP СИГНАЛ",
                 getVipSignalEarlyText: "ПОЛУЧИТЬ VIP СИГНАЛ",
-                inviteForVipTitle: "ДЛЯ ПОЛУЧЕНИЯ VIP СИГНАЛА WinWin",
-                inviteForVipDesc: "Пригласите 5 друзей для получения VIP сигнала WinWin. С каждым приглашенным другом ваш уровень повышается. После приглашения 5 друзей вы можете получить VIP сигнал.",
+                inviteForVipTitle: "ДЛЯ ПОЛУЧЕНИЯ VIP СИГНАЛА BetWinner",
+                inviteForVipDesc: "Пригласите 5 друзей для получения VIP сигнала BetWinner. С каждым приглашенным другом ваш уровень повышается. После приглашения 5 друзей вы можете получить VIP сигнал.",
                 inviteForVipBtnText: "ПРИГЛАСИТЬ ДРУЗЕЙ",
                 inviteFriendsValue: "ПОВЫШЕНИЕ УРОВНЯ",
                 inviteFriendsDescText: "С каждым приглашенным другом ваш уровень повышается. После приглашения 5 друзей вы получите VIP сигнал!",
-                apkDescText: "Скачайте мобильное приложение WinWin и получайте сигналы из любого места. Полная функциональность и удобный интерфейс. Приложение доступно для iOS и Android[citation:1].",
+                apkDescText: "Скачайте мобильное приложение BetWinner и получайте сигналы из любого места. Полная функциональность и удобный интерфейс. Приложение доступно для iOS и Android[citation:1].",
                 downloadApkText: "СКАЧАТЬ",
-                bonusDescText: "Зарегистрируйтесь с промокодом ALFUT в WinWin и получите на 30% больше бонуса чем стандартное предложение[citation:1]. Бонус 100% для казино и спортивных ставок[citation:1].",
+                bonusDescText: "Зарегистрируйтесь с промокодом SIGNAL7 в BetWinner и получите на 30% больше бонуса чем стандартное предложение[citation:1]. Бонус 100% для казино и спортивных ставок[citation:1].",
                 getBonusText: "ПОЛУЧИТЬ БОНУС",
                 inviteFriendsText: "ПРИГЛАСИТЬ ДРУЗЕЙ",
-                successSignal: "✅ Сигнал WinWin получен!",
+                successSignal: "✅ Сигнал BetWinner получен!",
                 errorSignal: "❌ Игра окончена.",
                 successBonus: "✅ Бонус получен!",
                 successInvite: "✅ Друг приглашен! Ваш уровень повысился!",
@@ -2575,32 +2585,32 @@
                 chooseApple: "🫱 Пожалуйста, выберите яблоко",
                 applesRevealed: "👁️ Яблоки показаны",
                 nextStageReady: "👉 Можно перейти на следующий этап",
-                timerTitle: "СЛЕДУЮЩИЙ СИГНАЛ WinWin",
+                timerTitle: "СЛЕДУЮЩИЙ СИГНАЛ BetWinner",
                 timerNote: "Нажмите кнопку выше, чтобы получить VIP сигнал",
-                idInputLabel: "ВВЕДИТЕ ВАШ ID НОМЕР WinWin",
+                idInputLabel: "ВВЕДИТЕ ВАШ ID НОМЕР BetWinner",
                 idInputHint: "Подтвердите ID номер",
                 verifyIdText: "ПОДТВЕРДИТЬ",
-                registerInModalText: "РЕГИСТРАЦИЯ В WinWin",
-                idRequired: "⚠️ Пожалуйста, введите ваш ID номер WinWin",
-                idInvalid: "❌ Неверный ID номер WinWin.",
-                idVerified: "✅ ID номер WinWin подтвержден! Можно получать сигналы",
+                registerInModalText: "РЕГИСТРАЦИЯ В BetWinner",
+                idRequired: "⚠️ Пожалуйста, введите ваш ID номер BetWinner",
+                idInvalid: "❌ Неверный ID номер BetWinner.",
+                idVerified: "✅ ID номер BetWinner подтвержден! Можно получать сигналы",
                 idExample: "Пример: 12345678901",
                 timerActiveMessage: "Вы ждете следующий сигнал",
                 timerSubmessage: "Можно получить сигнал после завершения таймера",
                 changeIdText: "Изменить ID",
                 registerText: "Регистрация",
-                changeIdModalTitle: "ИЗМЕНИТЬ ID WinWin",
+                changeIdModalTitle: "ИЗМЕНИТЬ ID BetWinner",
                 saveNewIdText: "СОХРАНИТЬ",
                 cancelChangeIdText: "ОТМЕНА",
-                idChangeSuccess: "✅ ID номер WinWin успешно изменен! Можно получать сигналы.",
-                registerSuccess: "✅ Вы успешно зарегистрировались в WinWin!",
+                idChangeSuccess: "✅ ID номер BetWinner успешно изменен! Можно получать сигналы.",
+                registerSuccess: "✅ Вы успешно зарегистрировались в BetWinner!",
                 vipTimerActionMessage: "Получить сигнал раньше времени",
                 vipTimerActionSubmessage: "Пропустите время ожидания с VIP сигналом",
                 getVipSignalEarlyText: "ПОЛУЧИТЬ VIP СИГНАЛ",
                 inviteForVipSuccess: "✅ Сообщение приглашения отправлено! Пригласите своих друзей.",
-                vipSignalUnavailable: "❌ Для получения VIP сигнала WinWin нужно пригласить 5 друзей",
-                vipSignalAvailable: "✅ VIP сигнал WinWin доступен!",
-                registerLinkOpened: "✅ Страница регистрации WinWin открыта",
+                vipSignalUnavailable: "❌ Для получения VIP сигнала BetWinner нужно пригласить 5 друзей",
+                vipSignalAvailable: "✅ VIP сигнал BetWinner доступен!",
+                registerLinkOpened: "✅ Страница регистрации BetWinner открыта",
                 timerReset: "✅ Таймер остановлен! Вы можете получать сигналы с новым ID.",
                 levelUp: "✅ Ваш уровень повысился! Новый уровень: ",
                 settingsLanguageTitle: "Сменить язык",
@@ -2611,19 +2621,19 @@
                 settingsInviteDesc: "Повысьте свой уровень",
                 settingsGuideTitle: "Инструкция по использованию",
                 settingsGuideDesc: "Как пользоваться",
-                guideStep1Title: "Регистрация в WinWin",
-                guideStep1Desc: "Зарегистрируйтесь через промокод ALFUT в WinWin. Это даст вам возможность получать сигналы.",
-                guideStep2Title: "Ввод ID номера WinWin",
-                guideStep2Desc: "Введите ваш зарегистрированный ID номер WinWin для входа в игру получения сигналов.",
+                guideStep1Title: "Регистрация в BetWinner",
+                guideStep1Desc: "Зарегистрируйтесь через промокод SIGNAL7 в BetWinner. Это даст вам возможность получать сигналы.",
+                guideStep2Title: "Ввод ID номера BetWinner",
+                guideStep2Desc: "Введите ваш зарегистрированный ID номер BetWinner для входа в игру получения сигналов.",
                 guideStep3Title: "Игра с яблоками",
-                guideStep3Desc: "Выбирайте целые яблоки. Каждый успешный этап дает вам сигнал для WinWin.",
+                guideStep3Desc: "Выбирайте целые яблоки. Каждый успешный этап дает вам сигнал для BetWinner.",
                 guideStep4Title: "Приглашение друзей",
                 guideStep4Desc: "Пригласите 5 друзей и получите VIP сигнал.",
-                guideStep5Title: "Получение сигнала WinWin",
+                guideStep5Title: "Получение сигнала BetWinner",
                 guideStep5Desc: "Если игра проиграна, нужно ждать 2 часа. С VIP сигналом можно пропустить время ожидания."
             },
             en: {
-                languageTitle: "WinWin Signals",
+                languageTitle: "BetWinner Signals",
                 languageSubtitle: "Bookmaker Platform",
                 userName: "User",
                 userLevel: "NEW",
@@ -2642,42 +2652,42 @@
                 vipBannerTitle: "BECOME VIP",
                 vipBannerDesc: "30% More Bonus[citation:1]",
                 registerPromoTitle: "REGISTER TO GET SIGNALS",
-                registerPromoDesc: "Register at WinWin through ALFUT promo code and get access to high accuracy signals",
+                registerPromoDesc: "Register at BetWinner through SIGNAL7 promo code and get access to high accuracy signals",
                 mainRegisterText: "REGISTER",
                 statsTitle: "DAILY STATISTICS",
                 dailyActive: "DAILY ACTIVE",
                 dailyAvgIncome: "AVG INCOME",
                 profit: "PROFIT",
                 onlinePlayers: "ONLINE PLAYERS",
-                gameModalTitle: "GET WinWin SIGNAL",
+                gameModalTitle: "GET BetWinner SIGNAL",
                 gameSubtitle: "Choose whole apples",
                 gameInstruction: "Click show apples button and choose whole apples. There are 5 apples at each stage.",
-                gameIdMessage: "Register through ALFUT promo code at WinWin to get signals. Enter your registered WinWin account ID number and choose whole apples.",
+                gameIdMessage: "Register through SIGNAL7 promo code at BetWinner to get signals. Enter your registered BetWinner account ID number and choose whole apples.",
                 revealText: "SHOW APPLES",
                 nextStageText: "NEXT STAGE",
-                vipModalTitle: "WinWin VIP SIGNAL",
-                vipMainTitle: "BECOME WinWin VIP",
+                vipModalTitle: "BetWinner VIP SIGNAL",
+                vipMainTitle: "BECOME BetWinner VIP",
                 vipMainDesc: "30% more bonus[citation:1] and exclusive privileges",
                 vipFeature1Title: "30% More Bonus[citation:1]",
-                vipFeature1Desc: "30% more bonus than standard WinWin offer[citation:1]",
+                vipFeature1Desc: "30% more bonus than standard BetWinner offer[citation:1]",
                 vipFeature2Title: "Real-time",
                 vipFeature2Desc: "Instant notifications and updates",
                 vipFeature3Title: "High Accuracy Predictions",
                 vipFeature3Desc: "Deep analysis and preview capability",
-                getVipText: "GET WinWin VIP SIGNAL",
+                getVipText: "GET BetWinner VIP SIGNAL",
                 getVipSignalText: "GET VIP SIGNAL",
                 getVipSignalEarlyText: "GET VIP SIGNAL",
-                inviteForVipTitle: "TO GET WinWin VIP SIGNAL",
-                inviteForVipDesc: "Invite 5 friends to get WinWin VIP signal. With each invited friend, your level increases. After inviting 5 friends, you can get VIP signal.",
+                inviteForVipTitle: "TO GET BetWinner VIP SIGNAL",
+                inviteForVipDesc: "Invite 5 friends to get BetWinner VIP signal. With each invited friend, your level increases. After inviting 5 friends, you can get VIP signal.",
                 inviteForVipBtnText: "INVITE FRIENDS",
                 inviteFriendsValue: "LEVEL UP",
                 inviteFriendsDescText: "With each invited friend, your level increases. After inviting 5 friends, you will get VIP signal!",
-                apkDescText: "Download WinWin mobile app and get signals from anywhere. Full functionality and convenient interface. App available for iOS and Android[citation:1].",
+                apkDescText: "Download BetWinner mobile app and get signals from anywhere. Full functionality and convenient interface. App available for iOS and Android[citation:1].",
                 downloadApkText: "DOWNLOAD",
-                bonusDescText: "Register with ALFUT promo code at WinWin and get 30% more bonus than standard offer[citation:1]. 100% bonus for casino and sports betting[citation:1].",
+                bonusDescText: "Register with SIGNAL7 promo code at BetWinner and get 30% more bonus than standard offer[citation:1]. 100% bonus for casino and sports betting[citation:1].",
                 getBonusText: "GET BONUS",
                 inviteFriendsText: "INVITE FRIENDS",
-                successSignal: "✅ WinWin signal received!",
+                successSignal: "✅ BetWinner signal received!",
                 errorSignal: "❌ Game over.",
                 successBonus: "✅ Bonus received!",
                 successInvite: "✅ Friend invited! Your level increased!",
@@ -2691,32 +2701,32 @@
                 chooseApple: "🫱 Please choose an apple",
                 applesRevealed: "👁️ Apples revealed",
                 nextStageReady: "👉 Can go to next stage",
-                timerTitle: "NEXT WinWin SIGNAL",
+                timerTitle: "NEXT BetWinner SIGNAL",
                 timerNote: "Click button above to get VIP signal",
-                idInputLabel: "ENTER YOUR WinWin ID NUMBER",
+                idInputLabel: "ENTER YOUR BetWinner ID NUMBER",
                 idInputHint: "Confirm ID number",
                 verifyIdText: "VERIFY",
-                registerInModalText: "REGISTER AT WinWin",
-                idRequired: "⚠️ Please enter your WinWin ID number",
-                idInvalid: "❌ Invalid WinWin ID number.",
-                idVerified: "✅ WinWin ID number verified! Can get signals now",
+                registerInModalText: "REGISTER AT BetWinner",
+                idRequired: "⚠️ Please enter your BetWinner ID number",
+                idInvalid: "❌ Invalid BetWinner ID number.",
+                idVerified: "✅ BetWinner ID number verified! Can get signals now",
                 idExample: "Example: 12345678901",
                 timerActiveMessage: "Waiting for next signal",
                 timerSubmessage: "You can get signal after timer ends",
                 changeIdText: "Change ID",
                 registerText: "Register",
-                changeIdModalTitle: "CHANGE WinWin ID",
+                changeIdModalTitle: "CHANGE BetWinner ID",
                 saveNewIdText: "SAVE",
                 cancelChangeIdText: "CANCEL",
-                idChangeSuccess: "✅ WinWin ID number changed successfully! You can get signals now.",
-                registerSuccess: "✅ Registration at WinWin successful!",
+                idChangeSuccess: "✅ BetWinner ID number changed successfully! You can get signals now.",
+                registerSuccess: "✅ Registration at BetWinner successful!",
                 vipTimerActionMessage: "Get signal before time",
                 vipTimerActionSubmessage: "Skip waiting time with VIP signal",
                 getVipSignalEarlyText: "GET VIP SIGNAL",
                 inviteForVipSuccess: "✅ Invitation message sent! Invite your friends.",
-                vipSignalUnavailable: "❌ To get WinWin VIP signal, you need to invite 5 friends",
-                vipSignalAvailable: "✅ WinWin VIP signal available!",
-                registerLinkOpened: "✅ WinWin registration page opened",
+                vipSignalUnavailable: "❌ To get BetWinner VIP signal, you need to invite 5 friends",
+                vipSignalAvailable: "✅ BetWinner VIP signal available!",
+                registerLinkOpened: "✅ BetWinner registration page opened",
                 timerReset: "✅ Timer stopped! You can get signals with new ID.",
                 levelUp: "✅ Your level increased! New level: ",
                 settingsLanguageTitle: "Change Language",
@@ -2727,19 +2737,19 @@
                 settingsInviteDesc: "Increase your level",
                 settingsGuideTitle: "User Guide",
                 settingsGuideDesc: "How to use",
-                guideStep1Title: "Register at WinWin",
-                guideStep1Desc: "Register through ALFUT promo code at WinWin. This gives you the opportunity to get signals.",
-                guideStep2Title: "Enter WinWin ID Number",
-                guideStep2Desc: "Enter your registered WinWin ID number to enter the signal game.",
+                guideStep1Title: "Register at BetWinner",
+                guideStep1Desc: "Register through SIGNAL7 promo code at BetWinner. This gives you the opportunity to get signals.",
+                guideStep2Title: "Enter BetWinner ID Number",
+                guideStep2Desc: "Enter your registered BetWinner ID number to enter the signal game.",
                 guideStep3Title: "Signal Game",
-                guideStep3Desc: "Choose whole apples. Each successful stage gives you a signal for WinWin.",
+                guideStep3Desc: "Choose whole apples. Each successful stage gives you a signal for BetWinner.",
                 guideStep4Title: "Invite Friends",
                 guideStep4Desc: "Invite 5 friends and get VIP signal.",
-                guideStep5Title: "Get WinWin Signal",
+                guideStep5Title: "Get BetWinner Signal",
                 guideStep5Desc: "If the game is lost, you need to wait 2 hours. With VIP signal you can skip waiting time."
             },
             ar: {
-                languageTitle: "WinWin Signals",
+                languageTitle: "BetWinner Signals",
                 languageSubtitle: "منصة المراهنات",
                 userName: "المستخدم",
                 userLevel: "جديد",
@@ -2758,42 +2768,42 @@
                 vipBannerTitle: "كن VIP",
                 vipBannerDesc: "30٪ مكافأة أكثر[citation:1]",
                 registerPromoTitle: "سجل للحصول على إشارات",
-                registerPromoDesc: "سجل في WinWin من خلال الرمز الترويجي ALFUT واحصل على إشارات عالية الدقة",
+                registerPromoDesc: "سجل في BetWinner من خلال الرمز الترويجي SIGNAL7 واحصل على إشارات عالية الدقة",
                 mainRegisterText: "تسجيل",
                 statsTitle: "الإحصائيات اليومية",
                 dailyActive: "نشط يوميًا",
                 dailyAvgIncome: "متوسط الدخل",
                 profit: "الربح",
                 onlinePlayers: "اللاعبون عبر الإنترنت",
-                gameModalTitle: "الحصول على إشارة WinWin",
+                gameModalTitle: "الحصول على إشارة BetWinner",
                 gameSubtitle: "اختر التفاح الكامل",
                 gameInstruction: "انقر على زر عرض التفاح واختر التفاح الكامل. هناك 5 تفاحات في كل مرحلة.",
-                gameIdMessage: "سجل في WinWin من خلال الرمز الترويجي ALFUT للحصول على إشارات. أدخل رقم هوية حساب WinWin المسجل واختر التفاح الكامل.",
+                gameIdMessage: "سجل في BetWinner من خلال الرمز الترويجي SIGNAL7 للحصول على إشارات. أدخل رقم هوية حساب BetWinner المسجل واختر التفاح الكامل.",
                 revealText: "عرض التفاح",
                 nextStageText: "المرحلة التالية",
-                vipModalTitle: "إشارة VIP WinWin",
-                vipMainTitle: "كن VIP في WinWin",
+                vipModalTitle: "إشارة VIP BetWinner",
+                vipMainTitle: "كن VIP في BetWinner",
                 vipMainDesc: "30٪ مكافأة أكثر[citation:1] وامتيازات حصرية",
                 vipFeature1Title: "30٪ مكافأة أكثر[citation:1]",
-                vipFeature1Desc: "30٪ مكافأة أكثر من العرض القياسي لـ WinWin[citation:1]",
+                vipFeature1Desc: "30٪ مكافأة أكثر من العرض القياسي لـ BetWinner[citation:1]",
                 vipFeature2Title: "الوقت الحقيقي",
                 vipFeature2Desc: "إشعارات وتحديثات فورية",
                 vipFeature3Title: "توقعات عالية الدقة",
                 vipFeature3Desc: "تحليل عميق وإمكانية المعاينة",
-                getVipText: "الحصول على إشارة VIP WinWin",
+                getVipText: "الحصول على إشارة VIP BetWinner",
                 getVipSignalText: "الحصول على إشارة VIP",
                 getVipSignalEarlyText: "الحصول على إشارة VIP",
-                inviteForVipTitle: "للحصول على إشارة VIP WinWin",
-                inviteForVipDesc: "قم بدعوة 5 أصدقاء للحصول على إشارة VIP WinWin. مع كل صديق مدعو، يرتفع مستواك. بعد دعوة 5 أصدقاء، يمكنك الحصول على إشارة VIP.",
+                inviteForVipTitle: "للحصول على إشارة VIP BetWinner",
+                inviteForVipDesc: "قم بدعوة 5 أصدقاء للحصول على إشارة VIP BetWinner. مع كل صديق مدعو، يرتفع مستواك. بعد دعوة 5 أصدقاء، يمكنك الحصول على إشارة VIP.",
                 inviteForVipBtnText: "دعوة الأصدقاء",
                 inviteFriendsValue: "رفع المستوى",
                 inviteFriendsDescText: "مع كل صديق مدعو، يرتفع مستواك. بعد دعوة 5 أصدقاء، ستحصل على إشارة VIP!",
-                apkDescText: "قم بتنزيل تطبيق WinWin المحمول واحصل على إشارات من أي مكان. وظائف كاملة وواجهة مريحة. التطبيق متاح لنظامي iOS و Android[citation:1].",
+                apkDescText: "قم بتنزيل تطبيق BetWinner المحمول واحصل على إشارات من أي مكان. وظائف كاملة وواجهة مريحة. التطبيق متاح لنظامي iOS و Android[citation:1].",
                 downloadApkText: "تحميل",
-                bonusDescText: "سجل باستخدام الرمز الترويجي ALFUT في WinWin واحصل على 30٪ مكافأة أكثر من العرض القياسي[citation:1]. مكافأة 100٪ للكازينو ومراهنات الرياضة[citation:1].",
+                bonusDescText: "سجل باستخدام الرمز الترويجي SIGNAL7 في BetWinner واحصل على 30٪ مكافأة أكثر من العرض القياسي[citation:1]. مكافأة 100٪ للكازينو ومراهنات الرياضة[citation:1].",
                 getBonusText: "الحصول على مكافأة",
                 inviteFriendsText: "دعوة الأصدقاء",
-                successSignal: "✅ تم استلام إشارة WinWin!",
+                successSignal: "✅ تم استلام إشارة BetWinner!",
                 errorSignal: "❌ انتهت اللعبة.",
                 successBonus: "✅ تم استلام المكافأة!",
                 successInvite: "✅ تمت دعوة الصديق! ارتفع مستواك!",
@@ -2807,32 +2817,32 @@
                 chooseApple: "🫱 الرجاء اختيار تفاحة",
                 applesRevealed: "👁️ تم عرض التفاح",
                 nextStageReady: "👉 يمكن الانتقال إلى المرحلة التالية",
-                timerTitle: "الإشارة التالية WinWin",
+                timerTitle: "الإشارة التالية BetWinner",
                 timerNote: "انقر على الزر أعلاه للحصول على إشارة VIP",
-                idInputLabel: "أدخل رقم معرف WinWin الخاص بك",
+                idInputLabel: "أدخل رقم معرف BetWinner الخاص بك",
                 idInputHint: "تأكيد رقم الهوية",
                 verifyIdText: "تأكيد",
-                registerInModalText: "التسجيل في WinWin",
-                idRequired: "⚠️ يرجى إدخال رقم معرف WinWin الخاص بك",
-                idInvalid: "❌ رقم معرف WinWin غير صالح.",
-                idVerified: "✅ تم التحقق من رقم معرف WinWin! يمكنك الحصول على الإشارات الآن",
+                registerInModalText: "التسجيل في BetWinner",
+                idRequired: "⚠️ يرجى إدخال رقم معرف BetWinner الخاص بك",
+                idInvalid: "❌ رقم معرف BetWinner غير صالح.",
+                idVerified: "✅ تم التحقق من رقم معرف BetWinner! يمكنك الحصول على الإشارات الآن",
                 idExample: "مثال: 12345678901",
                 timerActiveMessage: "في انتظار الإشارة التالية",
                 timerSubmessage: "يمكنك الحصول على إشارة بعد انتهاء المؤقت",
                 changeIdText: "تغيير المعرف",
                 registerText: "تسجيل",
-                changeIdModalTitle: "تغيير معرف WinWin",
+                changeIdModalTitle: "تغيير معرف BetWinner",
                 saveNewIdText: "حفظ",
                 cancelChangeIdText: "إلغاء",
-                idChangeSuccess: "✅ تم تغيير رقم معرف WinWin بنجاح! يمكنك الحصول على الإشارات الآن.",
-                registerSuccess: "✅ تم التسجيل في WinWin بنجاح!",
+                idChangeSuccess: "✅ تم تغيير رقم معرف BetWinner بنجاح! يمكنك الحصول على الإشارات الآن.",
+                registerSuccess: "✅ تم التسجيل في BetWinner بنجاح!",
                 vipTimerActionMessage: "احصل على إشارة قبل الوقت",
                 vipTimerActionSubmessage: "تخطى وقت الانتظار مع إشارة VIP",
                 getVipSignalEarlyText: "الحصول على إشارة VIP",
                 inviteForVipSuccess: "✅ تم إرسال رسالة الدعوة! قم بدعوة أصدقائك.",
-                vipSignalUnavailable: "❌ للحصول على إشارة VIP WinWin، تحتاج إلى دعوة 5 أصدقاء",
-                vipSignalAvailable: "✅ إشارة VIP WinWin متاحة!",
-                registerLinkOpened: "✅ تم فتح صفحة التسجيل في WinWin",
+                vipSignalUnavailable: "❌ للحصول على إشارة VIP BetWinner، تحتاج إلى دعوة 5 أصدقاء",
+                vipSignalAvailable: "✅ إشارة VIP BetWinner متاحة!",
+                registerLinkOpened: "✅ تم فتح صفحة التسجيل في BetWinner",
                 timerReset: "✅ تم إيقاف المؤقت! يمكنك الحصول على إشارات بالمعرف الجديد.",
                 levelUp: "✅ ارتفع مستواك! المستوى الجديد: ",
                 settingsLanguageTitle: "تغيير اللغة",
@@ -2843,20 +2853,20 @@
                 settingsInviteDesc: "ارفع مستواك",
                 settingsGuideTitle: "دليل المستخدم",
                 settingsGuideDesc: "كيفية الاستخدام",
-                guideStep1Title: "التسجيل في WinWin",
-                guideStep1Desc: "سجل في WinWin من خلال الرمز الترويجي ALFUT. هذا يمنحك فرصة للحصول على إشارات.",
-                guideStep2Title: "إدخال رقم هوية WinWin",
-                guideStep2Desc: "أدخل رقم هوية WinWin المسجل للدخول إلى لعبة الإشارات.",
+                guideStep1Title: "التسجيل في BetWinner",
+                guideStep1Desc: "سجل في BetWinner من خلال الرمز الترويجي SIGNAL7. هذا يمنحك فرصة للحصول على إشارات.",
+                guideStep2Title: "إدخال رقم هوية BetWinner",
+                guideStep2Desc: "أدخل رقم هوية BetWinner المسجل للدخول إلى لعبة الإشارات.",
                 guideStep3Title: "لعبة الإشارة",
-                guideStep3Desc: "اختر التفاح الكامل. كل مرحلة ناجحة تمنحك إشارة لـ WinWin.",
+                guideStep3Desc: "اختر التفاح الكامل. كل مرحلة ناجحة تمنحك إشارة لـ BetWinner.",
                 guideStep4Title: "دعوة الأصدقاء",
                 guideStep4Desc: "ادعُ 5 أصدقاء واحصل على إشارة VIP.",
-                guideStep5Title: "الحصول على إشارة WinWin",
+                guideStep5Title: "الحصول على إشارة BetWinner",
                 guideStep5Desc: "إذا خسرت اللعبة، يجب أن تنتظر ساعتين. مع إشارة VIP يمكنك تخطي وقت الانتظار."
             }
         };
 
-        let currentLang = localStorage.getItem('winwinSignalsLang') || 'uz';
+        let currentLang = localStorage.getItem('betwinnerSignalsLang') || 'uz';
         let userData = {
             level: "YANGI",
             invites: 0,
@@ -2893,17 +2903,17 @@
         });
 
         function initApp() {
-            const savedData = localStorage.getItem('winwinSignalsData');
+            const savedData = localStorage.getItem('betwinnerSignalsData');
             if (savedData) {
                 userData = JSON.parse(savedData);
             }
 
-            const savedStats = localStorage.getItem('winwinSignalsStats');
+            const savedStats = localStorage.getItem('betwinnerSignalsStats');
             if (savedStats) {
                 dailyStats = JSON.parse(savedStats);
             }
 
-            const savedTimer = localStorage.getItem('winwinSignalsTimer');
+            const savedTimer = localStorage.getItem('betwinnerSignalsTimer');
             if (savedTimer) {
                 gameState.timerEndTime = parseInt(savedTimer);
                 const now = Date.now();
@@ -2913,12 +2923,12 @@
                 }
             }
 
-            const savedIdVerified = localStorage.getItem('winwinSignalsIdVerified');
+            const savedIdVerified = localStorage.getItem('betwinnerSignalsIdVerified');
             if (savedIdVerified === 'true') {
                 gameState.idVerified = true;
             }
 
-            const savedUserId = localStorage.getItem('winwinSignalsUserId');
+            const savedUserId = localStorage.getItem('betwinnerSignalsUserId');
             if (savedUserId) {
                 gameState.userId = savedUserId;
                 updateUserIdDisplay();
@@ -2926,7 +2936,7 @@
 
             setupListeners();
             
-            if (localStorage.getItem('winwinSignalsLang')) {
+            if (localStorage.getItem('betwinnerSignalsLang')) {
                 selectLanguage(currentLang);
             } else {
                 document.getElementById('languageSelector').style.display = 'flex';
@@ -3037,7 +3047,7 @@
 
         function selectLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('winwinSignalsLang', lang);
+            localStorage.setItem('betwinnerSignalsLang', lang);
             document.getElementById('languageSelector').style.display = 'none';
             updateTranslations(lang);
             showPage('mainContainer');
@@ -3150,7 +3160,7 @@
                 userData.level = "junor";
             }
             userLevelElement.textContent = levelText;
-            userLevelElement.style.background = "linear-gradient(135deg, var(--primary), var(--secondary))";
+            userLevelElement.style.background = "linear-gradient(135deg, var(--primary), #ff9800)";
             levelValueElement.textContent = levelText;
             userData.invites = userData.invitedFriends;
         }
@@ -3179,7 +3189,7 @@
             if (getVipBtn) {
                 if (userData.invitedFriends >= 5) {
                     getVipBtn.disabled = false;
-                    getVipBtn.innerHTML = '<i class="fas fa-crown"></i> <span id="getVipText">WinWin VIP SIGNAL OLISH</span>';
+                    getVipBtn.innerHTML = '<i class="fas fa-crown"></i> <span id="getVipText">BetWinner VIP SIGNAL OLISH</span>';
                 } else {
                     getVipBtn.disabled = true;
                     getVipBtn.innerHTML = `<i class="fas fa-lock"></i> <span id="getVipText">${userData.invitedFriends}/5 TAKLIF</span>`;
@@ -3342,8 +3352,8 @@
             }
             gameState.idVerified = true;
             gameState.userId = value;
-            localStorage.setItem('winwinSignalsIdVerified', 'true');
-            localStorage.setItem('winwinSignalsUserId', value);
+            localStorage.setItem('betwinnerSignalsIdVerified', 'true');
+            localStorage.setItem('betwinnerSignalsUserId', value);
             updateUserIdDisplay();
             document.getElementById('idInputSection').style.display = 'none';
             document.getElementById('gameSection').style.display = 'block';
@@ -3372,9 +3382,9 @@
                 return;
             }
             gameState.userId = value;
-            localStorage.setItem('winwinSignalsUserId', value);
+            localStorage.setItem('betwinnerSignalsUserId', value);
             gameState.timerRunning = false;
-            localStorage.removeItem('winwinSignalsTimer');
+            localStorage.removeItem('betwinnerSignalsTimer');
             updateUserIdDisplay();
             closeModal('changeIdModal');
             showToast(translations[currentLang].idChangeSuccess, 'success');
@@ -3425,7 +3435,7 @@
                 }
                 if (gameState.selectedApple === i) {
                     apple.style.transform = 'scale(1.1)';
-                    apple.style.boxShadow = '0 0 15px rgba(40, 167, 69, 0.7)';
+                    apple.style.boxShadow = '0 0 15px rgba(0, 168, 84, 0.7)';
                 }
                 apple.addEventListener('click', () => selectApple(i));
                 container.appendChild(apple);
@@ -3595,7 +3605,7 @@
             const twoHours = 2 * 60 * 60 * 1000;
             gameState.timerEndTime = now + twoHours;
             gameState.timerRunning = true;
-            localStorage.setItem('winwinSignalsTimer', gameState.timerEndTime.toString());
+            localStorage.setItem('betwinnerSignalsTimer', gameState.timerEndTime.toString());
             startTimer();
             updateTimerUI();
         }
@@ -3608,7 +3618,7 @@
                 const timeLeft = gameState.timerEndTime - now;
                 if (timeLeft <= 0) {
                     gameState.timerRunning = false;
-                    localStorage.removeItem('winwinSignalsTimer');
+                    localStorage.removeItem('betwinnerSignalsTimer');
                     updateTimerUI();
                     if (document.getElementById('gameModal').classList.contains('active')) {
                         showGameModal();
@@ -3657,7 +3667,7 @@
         function getVipSignalEarly() {
             showToast(translations[currentLang].getVipSignalEarlyText + ' - ' + translations[currentLang].loading, 'info');
             gameState.timerRunning = false;
-            localStorage.removeItem('winwinSignalsTimer');
+            localStorage.removeItem('betwinnerSignalsTimer');
             closeModal('gameModal');
             setTimeout(() => {
                 showVipModal();
@@ -3665,7 +3675,7 @@
         }
 
         function inviteForVip() {
-            const shareMessage = `🎯 ${translations[currentLang].vipTitle} | WinWin Signals\n\n${translations[currentLang].inviteForVipDesc}\n\n👉 https://t.me/Applesignelsbot?start=ar0311167131\n\nSizning taklif kodingiz: ${gameState.userId || '1234567890'}\n\n#WinWin #VIPSignal`;
+            const shareMessage = `🎯 ${translations[currentLang].vipTitle} | BetWinner Signals\n\n${translations[currentLang].inviteForVipDesc}\n\n👉 https://t.me/Applesignelsbot?start=ar0311167131\n\nSizning taklif kodingiz: ${gameState.userId || '1234567890'}\n\n#BetWinner #VIPSignal`;
             const shareUrl = `https://t.me/share/url?url=https://t.me/Applesignelsbot?start=ar0311167131&text=${encodeURIComponent(shareMessage)}`;
             window.open(shareUrl, '_blank');
             if (userData.invitedFriends < 5) {
@@ -3704,7 +3714,7 @@
 
         function downloadApk() {
             window.open('https://t.me/BonusAPKxbetbot', '_blank');
-            showToast(translations[currentLang].downloadApkText + ' - WinWin');
+            showToast(translations[currentLang].downloadApkText + ' - BetWinner');
         }
 
         function getBonus() {
@@ -3713,7 +3723,7 @@
         }
 
         function inviteFriends() {
-            const shareMessage = `🎯 ${translations[currentLang].signalTitle} | WinWin Signals\n\n${translations[currentLang].inviteFriendsText}\n👉 https://t.me/Applesignelsbot?start=ar0311167131\n\nID: ${gameState.userId || '1234567890'}\n\n#WinWin`;
+            const shareMessage = `🎯 ${translations[currentLang].signalTitle} | BetWinner Signals\n\n${translations[currentLang].inviteFriendsText}\n👉 https://t.me/Applesignelsbot?start=ar0311167131\n\nID: ${gameState.userId || '1234567890'}\n\n#BetWinner`;
             const shareUrl = `https://t.me/share/url?url=https://t.me/Applesignelsbot?start=ar0311167131&text=${encodeURIComponent(shareMessage)}`;
             window.open(shareUrl, '_blank');
             if (userData.invitedFriends < 5) {
@@ -3736,8 +3746,8 @@
         }
 
         function saveData() {
-            localStorage.setItem('winwinSignalsData', JSON.stringify(userData));
-            localStorage.setItem('winwinSignalsStats', JSON.stringify(dailyStats));
+            localStorage.setItem('betwinnerSignalsData', JSON.stringify(userData));
+            localStorage.setItem('betwinnerSignalsStats', JSON.stringify(dailyStats));
         }
     </script>
 </body>
